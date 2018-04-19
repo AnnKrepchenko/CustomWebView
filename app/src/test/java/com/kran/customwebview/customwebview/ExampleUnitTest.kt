@@ -1,4 +1,4 @@
-package com.kran.cwv.customwebview
+package com.kran.customwebview.customwebview
 
 import org.junit.Test
 
