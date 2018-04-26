@@ -9,12 +9,12 @@ android {
     compileSdkVersion 27
 
     group = "com.kran.customwebview"
-    version = '0.1.2'
+    version = '0.1.3'
     defaultConfig {
         minSdkVersion 8
         targetSdkVersion 27
         versionCode 1
-        versionName "0.1.2"
+        versionName "0.1.3"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -35,10 +35,10 @@ android {
             name = "com.kran.customwebview"
 
         version {
-            name = '0.1.2-beta'
+            name = '0.1.3-beta'
             desc = 'Custom WebView adapted to work with JS'
             released = new Date()
-            vcsTag = '0.1.2'
+            vcsTag = '0.1.3'
         }
 
         licenses = ['Apache-2.0']
