@@ -158,10 +158,10 @@ open class CustomWebView : WebView {
 
     @JvmOverloads
     fun setListener(activity: Activity?, listener: Listener, requestCodeFilePicker: Int = REQUEST_CODE_FILE_PICKER) {
-        if (activity != null) {
-            mActivity = WeakReference(activity)
+        mActivity = if (activity == null) {
+            null
         } else {
-            mActivity = null
+            WeakReference(activity)
         }
 
         setListener(listener, requestCodeFilePicker)
@@ -169,10 +169,10 @@ open class CustomWebView : WebView {
 
     @JvmOverloads
     fun setListener(fragment: Fragment?, listener: Listener, requestCodeFilePicker: Int = REQUEST_CODE_FILE_PICKER) {
-        if (fragment != null) {
-            mFragment = WeakReference(fragment)
+        mFragment = if (fragment == null) {
+            null
         } else {
-            mFragment = null
+            WeakReference(fragment)
         }
 
         setListener(listener, requestCodeFilePicker)
@@ -575,7 +575,7 @@ open class CustomWebView : WebView {
             override fun shouldInterceptRequest(view: WebView, url: String): WebResourceResponse? {
                 if (Build.VERSION.SDK_INT >= 11) {
                     if (mListener != null) {
-                        mListener!!.shouldInterceptRequest(view, url)
+                        return mListener!!.shouldInterceptRequest(view, url)
                     }
                     return if (mCustomWebViewClient != null) {
                         mCustomWebViewClient!!.shouldInterceptRequest(view, url)
@@ -592,7 +592,7 @@ open class CustomWebView : WebView {
                 if (Build.VERSION.SDK_INT >= 21) {
                     val s = request.url.toString()
                     if (mListener != null) {
-                        mListener!!.shouldInterceptRequest(view, s)
+                        return mListener!!.shouldInterceptRequest(view, s)
                     }
                     return if (mCustomWebViewClient != null) {
                         mCustomWebViewClient!!.shouldInterceptRequest(view, request)
