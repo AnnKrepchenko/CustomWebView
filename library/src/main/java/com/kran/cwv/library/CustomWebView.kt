@@ -47,7 +47,7 @@ import java.util.LinkedList
 import java.util.Locale
 import java.util.MissingResourceException
 
-class CustomWebView : WebView {
+open class CustomWebView : WebView {
     protected val mPermittedHostnames: MutableList<String> = LinkedList()
     protected val mShouldRedirectUrls: MutableList<String> = LinkedList()
     protected val mHttpHeaders: MutableMap<String, String> = HashMap()
