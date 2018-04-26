@@ -468,7 +468,7 @@ class CustomWebView : WebView {
             private var loadingFinished = true
             private var redirect = false
 
-            override fun onPageStarted(view: WebView, url: String, favicon: Bitmap) {
+            override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
                 if (!hasError()) {
                     if (mListener != null) {
                         mListener!!.onPageStarted(url, favicon)
@@ -1072,7 +1072,7 @@ class CustomWebView : WebView {
     }
 
     interface Listener {
-        fun onPageStarted(url: String, favicon: Bitmap)
+        fun onPageStarted(url: String, favicon: Bitmap?)
 
         fun onPageFinished(url: String)
 

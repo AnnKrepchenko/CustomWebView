@@ -8,13 +8,13 @@ apply plugin: 'com.github.dcendents.android-maven'
 android {
     compileSdkVersion 27
 
-    group = android.defaultConfig.applicationId
-    version = android.defaultConfig.versionName
+    group = "com.kran.customwebview"
+    version = '0.1.1'
     defaultConfig {
         minSdkVersion 8
         targetSdkVersion 27
         versionCode 1
-        versionName "0.0.1"
+        versionName "0.1.1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -35,17 +35,18 @@ android {
             name = "com.kran.customwebview"
 
         version {
-            name = '0.0.1-beta'
+            name = '0.1.1-beta'
             desc = 'Custom WebView adapted to work with JS'
-            released  = new Date()
-            vcsTag = '0.0.1'
+            released = new Date()
+            vcsTag = '0.1.1'
         }
 
         licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/AnnKrepchenko/CustomWebView.git'
         websiteUrl = 'https://github.com/AnnKrepchenko/CustomWebView'
+        }
+        configurations = ['archives']
     }
-        configurations = ['archives'] }
 
 }
 
