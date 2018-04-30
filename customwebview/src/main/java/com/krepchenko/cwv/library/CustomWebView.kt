@@ -575,10 +575,7 @@ open class CustomWebView : WebView {
             override fun shouldInterceptRequest(view: WebView, url: String): WebResourceResponse? {
                 if (Build.VERSION.SDK_INT >= 11) {
                     if (mListener != null) {
-                        val webResourceResponse = mListener!!.shouldInterceptRequest(view, url)
-                        if(webResourceResponse!=null){
-                            return webResourceResponse
-                        }
+                        mListener!!.shouldInterceptRequest(view, url)
                     }
                     return if (mCustomWebViewClient != null) {
                         mCustomWebViewClient!!.shouldInterceptRequest(view, url)
@@ -595,10 +592,7 @@ open class CustomWebView : WebView {
                 if (Build.VERSION.SDK_INT >= 21) {
                     val s = request.url.toString()
                     if (mListener != null) {
-                        val webResourceResponse = mListener!!.shouldInterceptRequest(view, s)
-                        if(webResourceResponse!=null){
-                            return webResourceResponse
-                        }
+                        mListener!!.shouldInterceptRequest(view, s)
                     }
                     return if (mCustomWebViewClient != null) {
                         mCustomWebViewClient!!.shouldInterceptRequest(view, request)
